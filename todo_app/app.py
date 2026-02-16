@@ -113,4 +113,9 @@ async def delete_todo(todo_id: int):
     cursor.execute('DELETE FROM todos WHERE id = ?', (todo_id,))
     conn.commit()
     conn.close()
+    conn.close()
     return {"message": "Todo deleted"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8001)

@@ -26,7 +26,25 @@ A simple, functional, and aesthetically pleasing Todo List web application built
     uvicorn todo_app.app:app --reload
     ```
 4.  **Open in Browser**:
-    Visit [http://127.0.0.1:8000](http://127.0.0.1:8000).
+    Visit [http://127.0.0.1:8001](http://127.0.0.1:8001).
+
+## Running as Executable
+
+The application can also be run as a standalone executable.
+
+1.  **Navigate to the `dist` folder**:
+    ```powershell
+    cd dist
+    ```
+2.  **Run the executable**:
+    ```powershell
+    ./TaoTodo.exe
+    ```
+3.  **Open in Browser**:
+    Visit [http://127.0.0.1:8001](http://127.0.0.1:8001).
+
+> **Note**: The database `todos.db` will be created in the same folder as the executable to ensure data persistence.
+
 
 ## Agent Rules
 
@@ -41,6 +59,6 @@ This project adheres to specific rules defined in the `.agent/rules` directory.
 **Trigger:** On workspace initialization or Agent restart.
 **Instruction:**
 1. The Agent must automatically launch the **Browser Tool**.
-2. Navigate immediately to `http://127.0.0.1:8000/`.
+2. Navigate immediately to `http://127.0.0.1:8001/`.
 3. Dock the browser window to the side of the editor so the TODO list is visible.
-4. If the page requires a local server, check if port 8000 (or your specific port) is active; if not, run `npm run dev` first.
+4. If the page requires a local server, check if port 8001 (or your specific port) is active; if not, run `uvicorn todo_app.app:app --reload` first.
