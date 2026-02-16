@@ -21,11 +21,15 @@ A simple, functional, and aesthetically pleasing Todo List web application built
     ```bash
     .venv/Scripts/activate
     ```
-3.  **Run the application**:
+3.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  **Run the application**:
     ```bash
     uvicorn todo_app.app:app --reload
     ```
-4.  **Open in Browser**:
+5.  **Open in Browser**:
     Visit [http://127.0.0.1:8001](http://127.0.0.1:8001).
 
 ## Running as Executable
