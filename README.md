@@ -27,3 +27,20 @@ A simple, functional, and aesthetically pleasing Todo List web application built
     ```
 4.  **Open in Browser**:
     Visit [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+## Agent Rules
+
+This project adheres to specific rules defined in the `.agent/rules` directory.
+
+### Environment Policy (`.agent/rules/env.md`)
+- All new libraries MUST be installed into a local `.venv`.
+- Never install packages to the global Python path.
+- If the agent detects a missing dependency, it must first initialize the venv if not present.
+
+### Startup Dashboard Rule (`.agent/rules/startup.md`)
+**Trigger:** On workspace initialization or Agent restart.
+**Instruction:**
+1. The Agent must automatically launch the **Browser Tool**.
+2. Navigate immediately to `http://127.0.0.1:8000/`.
+3. Dock the browser window to the side of the editor so the TODO list is visible.
+4. If the page requires a local server, check if port 8000 (or your specific port) is active; if not, run `npm run dev` first.
